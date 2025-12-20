@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check, Users, Video, Award, Star, Play } from "lucide-react"
 import Link from "next/link"
+import { MobileNav } from "@/components/mobile-nav"
 
 export default function TrendlygrowwPage() {
   return (
@@ -15,7 +16,7 @@ export default function TrendlygrowwPage() {
             </div>
             <span className="text-xl font-semibold text-gray-900">Trendlygroww</span>
           </Link>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
@@ -26,6 +27,7 @@ export default function TrendlygrowwPage() {
               <Link href="/pricing">Buy Now</Link>
             </Button>
           </nav>
+          <MobileNav />
         </div>
       </header>
 

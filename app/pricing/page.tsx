@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check, Video } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
+import { MobileNav } from "@/components/mobile-nav"
 
 declare global {
   interface Window {
@@ -131,7 +132,7 @@ export default function PricingPage() {
             </div>
             <span className="text-xl font-semibold text-gray-900">Trendlygroww</span>
           </Link>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
@@ -142,6 +143,7 @@ export default function PricingPage() {
               <Link href="/pricing">Buy Now</Link>
             </Button>
           </nav>
+          <MobileNav />
         </div>
       </header>
 
