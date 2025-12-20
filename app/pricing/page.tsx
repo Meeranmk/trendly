@@ -139,6 +139,9 @@ export default function PricingPage() {
             <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
               Buy Now
             </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+              Contact
+            </Link>
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
               <Link href="/pricing">Buy Now</Link>
             </Button>

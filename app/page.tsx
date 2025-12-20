@@ -23,6 +23,9 @@ export default function TrendlygrowwPage() {
             <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
               Buy Now
             </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+              Contact
+            </Link>
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
               <Link href="/pricing">Buy Now</Link>
             </Button>
@@ -53,42 +56,6 @@ export default function TrendlygrowwPage() {
                   <Play className="ml-1 h-12 w-12 text-blue-600" fill="currentColor" />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="border-b border-gray-200 bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <Users className="h-8 w-8 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">50,000+</div>
-              <div className="mt-2 text-sm text-gray-600">Active Students</div>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <Video className="h-8 w-8 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">500+</div>
-              <div className="mt-2 text-sm text-gray-600">Video Tutorials</div>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <Award className="h-8 w-8 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">25+</div>
-              <div className="mt-2 text-sm text-gray-600">Expert Instructors</div>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <Star className="h-8 w-8 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">4.8/5</div>
-              <div className="mt-2 text-sm text-gray-600">Average Rating</div>
             </div>
           </div>
         </div>

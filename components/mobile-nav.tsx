@@ -42,6 +42,13 @@ export function MobileNav() {
                     >
                         Buy Now
                     </Link>
+                    <Link
+                        href="/contact"
+                        className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                        onClick={() => setOpen(false)}
+                    >
+                        Contact
+                    </Link>
                     <Button asChild className="bg-blue-600 hover:bg-blue-700 mt-4">
                         <Link href="/pricing" onClick={() => setOpen(false)}>
                             Buy Now
