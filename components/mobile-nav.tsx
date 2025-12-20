@@ -27,7 +27,7 @@ export function MobileNav() {
                 <SheetHeader>
                     <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-6 mt-8">
+                <nav className="flex flex-col gap-6 mt-8 pl-4">
                     <Link
                         href="/"
                         className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors"
