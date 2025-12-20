@@ -142,7 +142,7 @@ export default function PricingPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-glow">
+            <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
               <Link href="/pricing">Buy Now</Link>
             </Button>
           </nav>
@@ -185,8 +185,7 @@ export default function PricingPage() {
               </CardContent>
               <CardFooter>
                 <Button
-                  variant="outline"
-                  className="w-full bg-transparent"
+                  className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
                   onClick={() => handlePayment('Basic', 19)}
                   disabled={loading !== null}
                 >
@@ -226,7 +225,7 @@ export default function PricingPage() {
               </CardContent>
               <CardFooter>
                 <Button
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
                   onClick={() => handlePayment('Pro', 39)}
                   disabled={loading !== null}
                 >

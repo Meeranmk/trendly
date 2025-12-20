@@ -26,7 +26,7 @@ export default function TrendlygrowwPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-glow">
+            <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
               <Link href="/pricing">Buy Now</Link>
             </Button>
           </nav>
@@ -46,7 +46,7 @@ export default function TrendlygrowwPage() {
                 Learn from industry professionals and transform your video editing skills. From beginner to pro in one
                 place.
               </p>
-              <Button asChild className="mt-8 bg-white text-blue-600 hover:bg-blue-50">
+              <Button asChild className="mt-8 bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
                 <Link href="/pricing">Buy Now</Link>
               </Button>
             </div>
@@ -97,7 +97,7 @@ export default function TrendlygrowwPage() {
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="text-balance text-4xl font-bold text-white">Ready to Start Your Journey?</h2>
           <p className="mt-4 text-lg text-blue-50">Join thousands of students learning professional video editing</p>
-          <Button asChild className="mt-8 bg-white text-blue-600 hover:bg-blue-50">
+          <Button asChild className="mt-8 bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
             <Link href="/pricing">Get Started Today</Link>
           </Button>
         </div>

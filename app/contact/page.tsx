@@ -26,7 +26,7 @@ export default function ContactPage() {
                         <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                             Contact
                         </Link>
-                        <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-glow">
+                        <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
                             <Link href="/pricing">Buy Now</Link>
                         </Button>
                     </nav>
