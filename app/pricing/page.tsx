@@ -139,6 +139,9 @@ export default function PricingPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
+            <Link href="/faq" className="text-gray-600 hover:text-gray-900">
+              FAQ
+            </Link>
             <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
               <Link href="/pricing">Buy Now</Link>
             </Button>
@@ -229,47 +232,6 @@ export default function PricingPage() {
                   {loading === 'Pro' ? 'Processing...' : 'Buy Now'}
                 </Button>
               </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-center text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <div className="mt-12 space-y-6">
-            <Card className="border-gray-200 bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg">Can I cancel my subscription anytime?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Yes, you can cancel your subscription at any time. You'll continue to have access until the end of
-                  your billing period.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-gray-200 bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg">Do you offer refunds?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, contact us for a
-                  full refund.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-gray-200 bg-white">
-              <CardHeader>
-                <CardTitle className="text-lg">Can I upgrade or downgrade my plan?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  You can change your plan at any time from your account settings. Changes take effect immediately.
-                </p>
-              </CardContent>
             </Card>
           </div>
         </div>

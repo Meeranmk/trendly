@@ -23,6 +23,9 @@ export default function TrendlygrowwPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
+            <Link href="/faq" className="text-gray-600 hover:text-gray-900">
+              FAQ
+            </Link>
             <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
               <Link href="/pricing">Buy Now</Link>
             </Button>
