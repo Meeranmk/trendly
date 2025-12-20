@@ -49,7 +49,7 @@ export function MobileNav() {
                     >
                         Contact
                     </Link>
-                    <Button asChild className="bg-blue-600 hover:bg-blue-700 mt-4">
+                    <Button asChild className="bg-blue-600 hover:bg-blue-700 mt-4 btn-glow">
                         <Link href="/pricing" onClick={() => setOpen(false)}>
                             Buy Now
                         </Link>

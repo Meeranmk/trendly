@@ -142,7 +142,7 @@ export default function PricingPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-glow">
               <Link href="/pricing">Buy Now</Link>
             </Button>
           </nav>
