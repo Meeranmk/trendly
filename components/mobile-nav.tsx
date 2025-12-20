@@ -36,13 +36,6 @@ export function MobileNav() {
                         Home
                     </Link>
                     <Link
-                        href="/pricing"
-                        className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors"
-                        onClick={() => setOpen(false)}
-                    >
-                        Buy Now
-                    </Link>
-                    <Link
                         href="/contact"
                         className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors"
                         onClick={() => setOpen(false)}
