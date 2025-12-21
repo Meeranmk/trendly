@@ -48,7 +48,7 @@ export default function PricingPage() {
         },
         body: JSON.stringify({
           amount: amount,
-          currency: 'USD',
+          currency: 'INR',
           planName: planName,
         }),
       })
@@ -165,8 +165,8 @@ export default function PricingPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Basic</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">$19</span>
-                  <span className="text-gray-600">/month</span>
+                  <span className="text-4xl font-bold text-gray-900">₹199</span>
+                  <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -186,7 +186,7 @@ export default function PricingPage() {
               <CardFooter>
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Basic', 19)}
+                  onClick={() => handlePayment('Basic', 199)}
                   disabled={loading !== null}
                 >
                   {loading === 'Basic' ? 'Processing...' : 'Buy Now'}
@@ -202,8 +202,8 @@ export default function PricingPage() {
               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl">Pro</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">$39</span>
-                  <span className="text-gray-600">/month</span>
+                  <span className="text-4xl font-bold text-gray-900">₹299</span>
+                  <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -226,7 +226,7 @@ export default function PricingPage() {
               <CardFooter>
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Pro', 39)}
+                  onClick={() => handlePayment('Pro', 299)}
                   disabled={loading !== null}
                 >
                   {loading === 'Pro' ? 'Processing...' : 'Buy Now'}
