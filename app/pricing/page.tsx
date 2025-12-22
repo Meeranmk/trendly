@@ -165,7 +165,7 @@ export default function PricingPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Basic</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹199</span>
+                  <span className="text-4xl font-bold text-gray-900">₹2</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
@@ -186,7 +186,7 @@ export default function PricingPage() {
               <CardFooter>
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Basic', 199)}
+                  onClick={() => handlePayment('Basic', 2)}
                   disabled={loading !== null}
                 >
                   {loading === 'Basic' ? 'Processing...' : 'Buy Now'}
