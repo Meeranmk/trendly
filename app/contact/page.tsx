@@ -114,6 +114,22 @@ export default function ContactPage() {
                 </div>
             </section>
 
+            {/* Email Notice Section */}
+            <section className="bg-blue-600 py-8">
+                <div className="mx-auto max-w-7xl px-6 text-center">
+                    <p className="text-white text-lg">
+                        Please email us at{' '}
+                        <a
+                            href="mailto:trendlygroww@gmail.com"
+                            className="font-semibold underline hover:text-blue-100 transition-colors"
+                        >
+                            trendlygroww@gmail.com
+                        </a>
+                        {' '}if you don't get download link after payment
+                    </p>
+                </div>
+            </section>
+
             {/* Footer */}
             <footer className="bg-gray-900 py-8">
                 <div className="mx-auto max-w-7xl px-6 text-center">

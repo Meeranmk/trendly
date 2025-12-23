@@ -39,7 +39,7 @@ export default function FAQPage() {
                 <div className="mx-auto max-w-4xl px-6 text-center">
                     <h1 className="text-balance text-5xl font-bold text-white">Frequently Asked Questions</h1>
                     <p className="mt-4 text-lg text-blue-50">
-                        Find answers to common questions about our courses, pricing, and policies
+                        Find answers to common questions about our AI tools, pricing, and policies
                     </p>
                 </div>
             </section>
@@ -60,17 +60,6 @@ export default function FAQPage() {
                             </CardContent>
                         </Card>
 
-                        <Card className="border-gray-200 bg-white shadow-sm">
-                            <CardHeader>
-                                <CardTitle className="text-lg">Do you offer refunds?</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-gray-600">
-                                    We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, contact us for a
-                                    full refund.
-                                </p>
-                            </CardContent>
-                        </Card>
 
                         <Card className="border-gray-200 bg-white shadow-sm">
                             <CardHeader>
@@ -96,22 +85,22 @@ export default function FAQPage() {
 
                         <Card className="border-gray-200 bg-white shadow-sm">
                             <CardHeader>
-                                <CardTitle className="text-lg">Do I get lifetime access to the courses?</CardTitle>
+                                <CardTitle className="text-lg">Do I get lifetime access to the AI tools?</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-gray-600">
-                                    Yes! Once you purchase a course or subscribe to a plan, you get lifetime access to all the content, including future updates.
+                                    Yes! Once you purchase the software or subscribe to a plan, you get lifetime access to all the AI tools and features, including future updates.
                                 </p>
                             </CardContent>
                         </Card>
 
                         <Card className="border-gray-200 bg-white shadow-sm">
                             <CardHeader>
-                                <CardTitle className="text-lg">Are there any prerequisites for the courses?</CardTitle>
+                                <CardTitle className="text-lg">Are there any prerequisites for using the software?</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-gray-600">
-                                    Most of our courses are designed for beginners and don't require any prior experience. Advanced courses will clearly state any prerequisites.
+                                    No! Our software is designed to be user-friendly and doesn't require any prior video editing experience. The AI tools make it easy for anyone to create professional videos.
                                 </p>
                             </CardContent>
                         </Card>
