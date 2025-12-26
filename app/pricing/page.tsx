@@ -159,9 +159,9 @@ export default function PricingPage() {
               Select the perfect plan for your learning journey. All plans include lifetime access to purchased courses.
             </p>
           </div>
-          <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12 lg:items-stretch">
             {/* Basic Plan */}
-            <Card className="border-gray-200 bg-white">
+            <Card className="border-gray-200 bg-white flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl">Basic</CardTitle>
                 <CardDescription className="mt-4">
@@ -169,7 +169,7 @@ export default function PricingPage() {
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-grow">
                 {[
                   "Access to 50+ basic courses",
                   "Standard video quality",
@@ -183,7 +183,7 @@ export default function PricingPage() {
                   </div>
                 ))}
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
                   onClick={() => handlePayment('Basic', 2)}
@@ -195,7 +195,7 @@ export default function PricingPage() {
             </Card>
 
             {/* Pro Plan */}
-            <Card className="relative border-2 border-blue-600 bg-white shadow-lg">
+            <Card className="relative border-2 border-blue-600 bg-white shadow-lg flex flex-col">
               <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-4 py-1 text-sm font-semibold text-white">
                 Most Popular
               </div>
@@ -206,7 +206,7 @@ export default function PricingPage() {
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-grow">
                 {[
                   "Access to ALL 500+ courses",
                   "HD & 4K video quality",
@@ -223,7 +223,7 @@ export default function PricingPage() {
                   </div>
                 ))}
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
                   onClick={() => handlePayment('Pro', 299)}
