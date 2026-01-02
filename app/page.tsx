@@ -168,6 +168,156 @@ export default function TrendlygrowwPage() {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-balance text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+            <p className="mt-4 text-lg text-gray-600">Join thousands of satisfied creators</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Review 1 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Amazing software! No watermark and all premium features unlocked. Perfect for my YouTube videos. Worth every rupee!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
+                    <span className="font-semibold text-blue-600">RK</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Rahul Kumar</p>
+                    <p className="text-sm text-gray-500">Content Creator</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Review 2 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Best purchase ever! All AI tools working perfectly. My editing speed has increased 10x. Highly recommended!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
+                    <span className="font-semibold text-purple-600">PS</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Priya Sharma</p>
+                    <p className="text-sm text-gray-500">Instagram Influencer</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Review 3 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Instant download and easy installation. Works on both my PC and phone. Customer support is also very helpful!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                    <span className="font-semibold text-green-600">AM</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Arjun Mehta</p>
+                    <p className="text-sm text-gray-500">Video Editor</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Review 4 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Finally a genuine pre-activated version! No subscription needed. Lifetime access is the best part. Thank you!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100">
+                    <span className="font-semibold text-orange-600">SK</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Sneha Kapoor</p>
+                    <p className="text-sm text-gray-500">Digital Marketer</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Review 5 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Great value for money! All premium transitions and effects included. My reels look so professional now!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100">
+                    <span className="font-semibold text-pink-600">NK</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Neha Khanna</p>
+                    <p className="text-sm text-gray-500">Fashion Blogger</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Review 6 */}
+            <Card className="border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Smooth performance, no lag. Color grading tools are amazing. Best investment for my editing career!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100">
+                    <span className="font-semibold text-indigo-600">VG</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Vikram Gupta</p>
+                    <p className="text-sm text-gray-500">Freelance Editor</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="mx-auto max-w-7xl px-6 text-center">
