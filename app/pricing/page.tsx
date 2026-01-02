@@ -163,19 +163,21 @@ export default function PricingPage() {
             {/* Basic Plan */}
             <Card className="border-gray-200 bg-white flex flex-col">
               <CardHeader>
-                <CardTitle className="text-2xl">Basic</CardTitle>
+                <CardTitle className="text-2xl">BASIC BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹2</span>
+                  <span className="text-4xl font-bold text-gray-900">₹99</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 flex-grow">
+                <p className="text-gray-600 mb-4">👉 Best for Beginners & Simple Editing</p>
                 {[
-                  "Access to 50+ basic courses",
-                  "Standard video quality",
-                  "Community forum access",
-                  "Mobile app access",
-                  "Course certificates",
+                  "Simple Transitions (zoom, swipe, fade)",
+                  "Basic Text Animations",
+                  "Trending Background Music",
+                  "Simple Color Presets",
+                  "Easy to use – No editing skills needed",
+                  "Mobile-friendly (CapCut / VN)",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 flex-shrink-0 text-emerald-600" />
@@ -186,7 +188,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Basic', 2)}
+                  onClick={() => handlePayment('Basic', 99)}
                   disabled={loading !== null}
                 >
                   {loading === 'Basic' ? 'Processing...' : 'Buy Now'}
@@ -200,22 +202,23 @@ export default function PricingPage() {
                 Most Popular
               </div>
               <CardHeader className="pt-8">
-                <CardTitle className="text-2xl">Pro</CardTitle>
+                <CardTitle className="text-2xl">ADVANCED BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹299</span>
+                  <span className="text-4xl font-bold text-gray-900">₹199</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 flex-grow">
+                <p className="text-gray-600 mb-4">👉 Best for Professional & Cinematic Editing</p>
                 {[
-                  "Access to ALL 500+ courses",
-                  "HD & 4K video quality",
-                  "Priority community support",
-                  "Mobile & desktop apps",
-                  "Course certificates",
-                  "Downloadable resources",
-                  "Project files included",
-                  "Monthly live Q&A sessions",
+                  "Premium Cinematic Transitions",
+                  "Advanced Motion Graphics & Effects",
+                  "Professional Text & Title Animations",
+                  "High-quality LUTs / Color Grading Presets",
+                  "Green Screen Overlays (smoke, fire, effects)",
+                  "Professional Sound Effects (SFX)",
+                  "Full customization & layered editing",
+                  "Mobile + PC support (CapCut, VN, Alight Motion, Premiere Pro, After Effects*)",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 flex-shrink-0 text-emerald-600" />
@@ -226,7 +229,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Pro', 299)}
+                  onClick={() => handlePayment('Pro', 199)}
                   disabled={loading !== null}
                 >
                   {loading === 'Pro' ? 'Processing...' : 'Buy Now'}

@@ -46,7 +46,7 @@ export default function TrendlygrowwPage() {
                 (For Windows PC/Laptop, & Android Phone, Apple Devices)
               </p>
               <Button asChild className="mt-8 bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow">
-                <Link href="/pricing">BUY NOW JUST AT ₹199</Link>
+                <Link href="/pricing">BUY NOW JUST AT ₹99</Link>
               </Button>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -162,7 +162,7 @@ export default function TrendlygrowwPage() {
 
           <div className="text-center">
             <Button asChild className="bg-amber-400 hover:bg-amber-500 text-black font-bold text-lg px-12 py-6 btn-glow">
-              <Link href="/pricing">BUY NOW JUST AT ₹199</Link>
+              <Link href="/pricing">BUY NOW JUST AT ₹99</Link>
             </Button>
           </div>
         </div>
