@@ -16,7 +16,7 @@ export default function PaymentFailurePage() {
                     <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
                         <XCircle className="h-12 w-12 text-red-600" />
                     </div>
-                    <CardTitle className="text-3xl font-bold text-gray-900">Payment Failed</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-gray-900 sm:text-3xl">Payment Failed</CardTitle>
                     <CardDescription className="mt-2 text-lg text-gray-600">
                         We couldn't process your payment
                     </CardDescription>

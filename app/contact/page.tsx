@@ -38,7 +38,7 @@ export default function ContactPage() {
             <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 py-20">
                 <div className="mx-auto max-w-4xl px-6">
                     <div className="text-center">
-                        <h1 className="text-balance text-5xl font-bold text-white">Get in Touch</h1>
+                        <h1 className="text-balance text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Get in Touch</h1>
                         <p className="mt-4 text-lg text-blue-50">
                             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                         </p>
@@ -133,7 +133,7 @@ export default function ContactPage() {
             {/* Footer */}
             <footer className="bg-gray-900 py-8">
                 <div className="mx-auto max-w-7xl px-6 text-center">
-                    <p className="text-gray-400">© 2025 Trendlygroww. All rights reserved.</p>
+                    <p className="text-gray-400">© 2026 Trendlygroww. All rights reserved.</p>
                 </div>
             </footer>
         </div>

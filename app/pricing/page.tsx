@@ -154,7 +154,7 @@ export default function PricingPage() {
       <section className="bg-gray-50 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
-            <h1 className="text-balance text-4xl font-bold text-gray-900">Choose Your Plan</h1>
+            <h1 className="text-balance text-3xl font-bold text-gray-900 sm:text-4xl">Choose Your Plan</h1>
             <p className="mt-4 text-pretty text-lg text-gray-600">
               Select the perfect plan for your learning journey. All plans include lifetime access to purchased courses.
             </p>
@@ -243,7 +243,7 @@ export default function PricingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="text-gray-400">© 2025 Trendlygroww. All rights reserved.</p>
+          <p className="text-gray-400">© 2026 Trendlygroww. All rights reserved.</p>
         </div>
       </footer>
     </div>

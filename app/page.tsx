@@ -39,7 +39,7 @@ export default function TrendlygrowwPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <h1 className="text-balance text-3xl font-bold leading-tight text-white lg:text-4xl">
+              <h1 className="text-balance text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-5xl">
                 Latest Capcut Pro Video Editing Software Pre-Activated – With ALL A.I Tools, No Watermark, No Subscription Needed 💻📱
               </h1>
               <p className="mt-6 text-base text-blue-50">
@@ -64,7 +64,7 @@ export default function TrendlygrowwPage() {
       <section className="bg-gray-50 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
-            <h2 className="text-balance text-4xl font-bold text-gray-900">Features Included In Software</h2>
+            <h2 className="text-balance text-3xl font-bold text-gray-900 sm:text-4xl">Features Included In Software</h2>
           </div>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -92,7 +92,7 @@ export default function TrendlygrowwPage() {
       <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-balance text-4xl font-bold text-white">100% Pre-Activated - NO Watermark</h2>
+            <h2 className="text-balance text-3xl font-bold text-white sm:text-4xl">100% Pre-Activated - NO Watermark</h2>
             <div className="mt-4 h-1 w-24 bg-amber-400 mx-auto"></div>
           </div>
 
@@ -172,7 +172,7 @@ export default function TrendlygrowwPage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-16">
-            <h2 className="text-balance text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+            <h2 className="text-balance text-3xl font-bold text-gray-900 sm:text-4xl">What Our Customers Say</h2>
             <p className="mt-4 text-lg text-gray-600">Join thousands of satisfied creators</p>
           </div>
 
@@ -321,7 +321,7 @@ export default function TrendlygrowwPage() {
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="text-gray-400">© 2025 Trendlygroww. All rights reserved.</p>
+          <p className="text-gray-400">© 2026 Trendlygroww. All rights reserved.</p>
         </div>
       </footer>
     </div>

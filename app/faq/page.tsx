@@ -37,7 +37,7 @@ export default function FAQPage() {
             {/* FAQ Hero Section */}
             <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 py-20">
                 <div className="mx-auto max-w-4xl px-6 text-center">
-                    <h1 className="text-balance text-5xl font-bold text-white">Frequently Asked Questions</h1>
+                    <h1 className="text-balance text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Frequently Asked Questions</h1>
                     <p className="mt-4 text-lg text-blue-50">
                         Find answers to common questions about our AI tools, pricing, and policies
                     </p>
@@ -120,7 +120,7 @@ export default function FAQPage() {
             {/* Footer */}
             <footer className="bg-gray-900 py-8">
                 <div className="mx-auto max-w-7xl px-6 text-center">
-                    <p className="text-gray-400">© 2025 Trendlygroww. All rights reserved.</p>
+                    <p className="text-gray-400">© 2026 Trendlygroww. All rights reserved.</p>
                 </div>
             </footer>
         </div>

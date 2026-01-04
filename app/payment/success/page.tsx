@@ -19,7 +19,7 @@ function SuccessContent() {
                     <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100">
                         <CheckCircle className="h-12 w-12 text-emerald-600" />
                     </div>
-                    <CardTitle className="text-3xl font-bold text-gray-900">Payment Successful!</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-gray-900 sm:text-3xl">Payment Successful!</CardTitle>
                     <CardDescription className="mt-2 text-lg text-gray-600">
                         Thank you for subscribing to Trendlygroww
                     </CardDescription>
