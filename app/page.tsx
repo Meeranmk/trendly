@@ -49,11 +49,19 @@ export default function TrendlygrowwPage() {
                 <Link href="/pricing">BUY NOW JUST AT ₹99</Link>
               </Button>
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="flex h-64 w-64 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-sm lg:h-80 lg:w-80">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/90">
-                  <Play className="ml-1 h-12 w-12 text-blue-600" fill="currentColor" />
-                </div>
+            <div className="flex justify-center lg:justify-end lg:items-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-xs lg:max-w-sm">
+                <video
+                  className="w-full h-auto rounded-2xl"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/Trendlygrow.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
