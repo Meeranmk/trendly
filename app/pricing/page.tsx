@@ -3,7 +3,10 @@
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Video, Clock } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Check, Video, Clock, Mail, User, Phone } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { MobileNav } from "@/components/mobile-nav"
@@ -18,6 +21,13 @@ export default function PricingPage() {
   const router = useRouter()
   const [loading, setLoading] = useState<string | null>(null)
   const [timeLeft, setTimeLeft] = useState(5 * 60) // 5 minutes in seconds
+  const [showDetailsDialog, setShowDetailsDialog] = useState(false)
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; amount: number } | null>(null)
+  const [customerDetails, setCustomerDetails] = useState({
+    name: '',
+    email: '',
+    contact: '',
+  })
 
   // Countdown timer effect
   useEffect(() => {
@@ -48,6 +58,38 @@ export default function PricingPage() {
       script.onerror = () => resolve(false)
       document.body.appendChild(script)
     })
+  }
+
+  const handleBuyNowClick = (planName: string, amount: number) => {
+    setSelectedPlan({ name: planName, amount })
+    setShowDetailsDialog(true)
+  }
+
+  const handleDetailsSubmit = () => {
+    // Validate customer details
+    if (!customerDetails.name || !customerDetails.email || !customerDetails.contact) {
+      alert('Please fill in all fields')
+      return
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(customerDetails.email)) {
+      alert('Please enter a valid email address')
+      return
+    }
+
+    // Validate phone number (10 digits)
+    const phoneRegex = /^[0-9]{10}$/
+    if (!phoneRegex.test(customerDetails.contact)) {
+      alert('Please enter a valid 10-digit phone number')
+      return
+    }
+
+    setShowDetailsDialog(false)
+    if (selectedPlan) {
+      handlePayment(selectedPlan.name, selectedPlan.amount)
+    }
   }
 
   const handlePayment = async (planName: string, amount: number) => {
@@ -118,9 +160,13 @@ export default function PricingPage() {
           }
         },
         prefill: {
-          name: '',
-          email: '',
-          contact: '',
+          name: customerDetails.name,
+          email: customerDetails.email,
+          contact: customerDetails.contact,
+        },
+        notes: {
+          package: planName,
+          amount: amount,
         },
         theme: {
           color: '#2563eb',
@@ -129,6 +175,13 @@ export default function PricingPage() {
           ondismiss: function () {
             setLoading(null)
           },
+          confirm_close: true,
+        },
+        // Make email and contact readonly: false to allow editing
+        readonly: {
+          email: false,
+          contact: false,
+          name: false,
         },
       }
 
@@ -171,6 +224,77 @@ export default function PricingPage() {
           <MobileNav />
         </div>
       </header>
+
+      {/* Customer Details Dialog */}
+      <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Enter Your Details</DialogTitle>
+            <DialogDescription>
+              We'll send your package download link to this email address after payment.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid gap-2">
+              <Label htmlFor="name" className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                Full Name *
+              </Label>
+              <Input
+                id="name"
+                placeholder="Enter your full name"
+                value={customerDetails.name}
+                onChange={(e) => setCustomerDetails({ ...customerDetails, name: e.target.value })}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email" className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Email Address *
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="your.email@example.com"
+                value={customerDetails.email}
+                onChange={(e) => setCustomerDetails({ ...customerDetails, email: e.target.value })}
+              />
+              <p className="text-xs text-gray-500">Package link will be sent to this email</p>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="contact" className="flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                Phone Number *
+              </Label>
+              <Input
+                id="contact"
+                type="tel"
+                placeholder="10-digit mobile number"
+                maxLength={10}
+                value={customerDetails.contact}
+                onChange={(e) => setCustomerDetails({ ...customerDetails, contact: e.target.value.replace(/\D/g, '') })}
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setShowDetailsDialog(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              onClick={handleDetailsSubmit}
+              className="bg-blue-600 hover:bg-blue-700"
+            >
+              Proceed to Payment
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
 
       {/* Pricing Section */}
       <section className="bg-gray-50 py-20">
@@ -239,7 +363,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Basic', 99)}
+                  onClick={() => handleBuyNowClick('Basic', 99)}
                   disabled={loading !== null}
                 >
                   {loading === 'Basic' ? 'Processing...' : 'Buy Now'}
@@ -283,7 +407,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Advanced', 149)}
+                  onClick={() => handleBuyNowClick('Advanced', 149)}
                   disabled={loading !== null}
                 >
                   {loading === 'Advanced' ? 'Processing...' : 'Buy Now'}
@@ -333,7 +457,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold btn-glow shadow-lg"
-                  onClick={() => handlePayment('Premium', 199)}
+                  onClick={() => handleBuyNowClick('Premium', 199)}
                   disabled={loading !== null}
                 >
                   {loading === 'Premium' ? 'Processing...' : 'Buy Now'}
