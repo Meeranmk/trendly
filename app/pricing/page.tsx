@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Video } from "lucide-react"
+import { Check, Video, Clock } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { MobileNav } from "@/components/mobile-nav"
@@ -17,6 +17,28 @@ declare global {
 export default function PricingPage() {
   const router = useRouter()
   const [loading, setLoading] = useState<string | null>(null)
+  const [timeLeft, setTimeLeft] = useState(5 * 60) // 5 minutes in seconds
+
+  // Countdown timer effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          return 5 * 60 // Reset to 5 minutes when it reaches 0
+        }
+        return prevTime - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  // Format time as MM:SS
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+  }
 
   const loadRazorpayScript = () => {
     return new Promise((resolve) => {
@@ -158,9 +180,35 @@ export default function PricingPage() {
             <p className="mt-4 text-pretty text-lg text-gray-600">
               Select the perfect plan for your learning journey. All plans include lifetime access to purchased courses.
             </p>
+
+            {/* 5 Minute Countdown Timer */}
+            <div className="mt-8 inline-block">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
+                <div className="relative bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl px-8 py-6 shadow-2xl border-2 border-red-400">
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full animate-bounce">
+                      <Clock className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-white text-sm font-semibold uppercase tracking-wider">⚡ Limited Time Offer</p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-white text-xs">Offer expires in:</span>
+                        <span className="text-white text-2xl font-bold font-mono tabular-nums">
+                          {formatTime(timeLeft)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-center">
+                    <p className="text-yellow-200 text-xs font-semibold animate-pulse">🔥 Don't miss out! Prices may increase soon!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12 lg:items-stretch">
-            {/* Basic Plan */}
+          <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-8 lg:items-stretch">
+            {/* Basic Plan - ₹99 */}
             <Card className="border-gray-200 bg-white flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl">BASIC BUNDLE</CardTitle>
@@ -170,14 +218,17 @@ export default function PricingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 flex-grow">
-                <p className="text-gray-600 mb-4">👉 Best for Beginners & Simple Editing</p>
+                <p className="text-gray-600 mb-4 font-semibold">👉 Best for Beginners & Simple Editing</p>
                 {[
-                  "Simple Transitions (zoom, swipe, fade)",
+                  "Simple Transitions (Zoom, Swipe, Fade)",
                   "Basic Text Animations",
                   "Trending Background Music",
                   "Simple Color Presets",
-                  "Easy to use – No editing skills needed",
-                  "Mobile-friendly (CapCut / VN)",
+                  "Basic Skull Faces & Backgrounds",
+                  "Animated Emojis & Arrows",
+                  "Film Burn Effects & Glowing Icons",
+                  "Easy to Use – No Editing Skills Needed",
+                  "Mobile-Friendly (CapCut / VN)",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 flex-shrink-0 text-emerald-600" />
@@ -196,7 +247,7 @@ export default function PricingPage() {
               </CardFooter>
             </Card>
 
-            {/* Pro Plan */}
+            {/* Advanced Plan - ₹149 */}
             <Card className="relative border-2 border-blue-600 bg-white shadow-lg flex flex-col">
               <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-4 py-1 text-sm font-semibold text-white">
                 Most Popular
@@ -204,21 +255,24 @@ export default function PricingPage() {
               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl">ADVANCED BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹199</span>
+                  <span className="text-4xl font-bold text-gray-900">₹149</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 flex-grow">
-                <p className="text-gray-600 mb-4">👉 Best for Professional & Cinematic Editing</p>
+                <p className="text-gray-600 mb-4 font-semibold">👉 Best for Professional & Cinematic Editing</p>
                 {[
                   "Premium Cinematic Transitions",
-                  "Advanced Motion Graphics & Effects",
+                  "Advanced Motion Graphics & Visual Effects",
+                  "Trending Background Music",
+                  "Premium Skull Faces & Backgrounds",
+                  "AI Animations & Overlays",
                   "Professional Text & Title Animations",
-                  "High-quality LUTs / Color Grading Presets",
-                  "Green Screen Overlays (smoke, fire, effects)",
+                  "High-Quality LUTs / Color Grading Presets",
+                  "Green Screen Overlays (Smoke, Fire, FX)",
                   "Professional Sound Effects (SFX)",
-                  "Full customization & layered editing",
-                  "Mobile + PC support (CapCut, VN, Alight Motion, Premiere Pro, After Effects*)",
+                  "Full Customization & Layered Editing",
+                  "Mobile + PC Support (CapCut, VN, Alight Motion, Premiere Pro, After Effects)",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 flex-shrink-0 text-emerald-600" />
@@ -229,10 +283,60 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handlePayment('Pro', 199)}
+                  onClick={() => handlePayment('Advanced', 149)}
                   disabled={loading !== null}
                 >
-                  {loading === 'Pro' ? 'Processing...' : 'Buy Now'}
+                  {loading === 'Advanced' ? 'Processing...' : 'Buy Now'}
+                </Button>
+              </CardFooter>
+            </Card>
+
+            {/* Premium Plan - ₹199 */}
+            <Card className="relative border-2 border-amber-500 bg-gradient-to-br from-amber-50 to-white shadow-xl flex flex-col">
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-1 text-sm font-semibold text-white">
+                🔥 Best Value
+              </div>
+              <CardHeader className="pt-8">
+                <CardTitle className="text-2xl">PREMIUM BUNDLE</CardTitle>
+                <CardDescription className="mt-4">
+                  <span className="text-4xl font-bold text-gray-900">₹199</span>
+                  <span className="text-gray-600"> Lifetime</span>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4 flex-grow">
+                <p className="text-gray-600 mb-4 font-semibold">👉 Best for Creators, Agencies & Power Editors</p>
+                {[
+                  "Lakhs of Ready-to-Use Assets & Mega Bundles",
+                  "Everything Included in ₹99 + ₹149 Packages",
+                  "Ultra-Cinematic Transitions & Effects",
+                  "AI-Powered Video Animations & Smart Overlays",
+                  "Premium Motion Packs (Reels, Shorts, YouTube, Ads)",
+                  "Viral Reels & Trending Templates (Updated Regularly)",
+                  "Advanced Text, Typography & Logo Animations",
+                  "Hollywood-Style LUTs & Color Grading Packs",
+                  "Massive Green Screen FX Library",
+                  "High-End Sound Effects & Music Packs",
+                  "Full Creative Freedom – Deep Customization",
+                  "Mobile + PC Supported (CapCut, VN, Alight Motion, Premiere Pro, After Effects)",
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 flex-shrink-0 text-emerald-600" />
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+                <div className="mt-4 pt-4 border-t border-amber-200">
+                  <p className="text-center text-sm font-semibold text-amber-700">
+                    🔥 All-in-One Editing Solution | Lifetime Use
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter className="mt-auto">
+                <Button
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold btn-glow shadow-lg"
+                  onClick={() => handlePayment('Premium', 199)}
+                  disabled={loading !== null}
+                >
+                  {loading === 'Premium' ? 'Processing...' : 'Buy Now'}
                 </Button>
               </CardFooter>
             </Card>

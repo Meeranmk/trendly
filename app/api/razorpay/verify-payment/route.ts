@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
+import Razorpay from 'razorpay'
+import { sendPackageEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
     try {
@@ -25,12 +27,45 @@ export async function POST(request: NextRequest) {
         const isAuthentic = expectedSignature === razorpay_signature
 
         if (isAuthentic) {
-            // Payment is verified
-            // Here you can:
-            // 1. Save payment details to database
-            // 2. Grant user access to the plan
-            // 3. Send confirmation email
-            // 4. Update user subscription status
+            // Initialize Razorpay to fetch order and payment details
+            const razorpay = new Razorpay({
+                key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
+                key_secret: process.env.RAZORPAY_KEY_SECRET!,
+            })
+
+            try {
+                // Fetch order details to get package name
+                const order = await razorpay.orders.fetch(razorpay_order_id)
+                const packageName = order.notes?.planName ? String(order.notes.planName) : 'Basic'
+
+                // Fetch payment details to get customer email
+                const payment = await razorpay.payments.fetch(razorpay_payment_id)
+                const customerEmail = payment.email ? String(payment.email) : null
+                const customerName = payment.contact ? String(payment.contact) : 'Customer'
+
+                // Send email with package link if email is available
+                if (customerEmail) {
+                    try {
+                        await sendPackageEmail({
+                            customerEmail,
+                            customerName,
+                            packageName,
+                            orderId: razorpay_order_id,
+                            paymentId: razorpay_payment_id,
+                        })
+                        console.log(`Package email sent to ${customerEmail} for ${packageName} package`)
+                    } catch (emailError) {
+                        console.error('Failed to send email, but payment was successful:', emailError)
+                        // Don't fail the payment verification if email fails
+                        // You might want to log this to a database for manual follow-up
+                    }
+                } else {
+                    console.warn('No customer email found in payment details')
+                }
+            } catch (fetchError) {
+                console.error('Error fetching order/payment details:', fetchError)
+                // Continue with payment verification even if fetching details fails
+            }
 
             return NextResponse.json({
                 success: true,

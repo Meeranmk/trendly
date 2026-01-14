@@ -50,9 +50,9 @@ export default function TrendlygrowwPage() {
               </Button>
             </div>
             <div className="flex justify-center lg:justify-end lg:items-center">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-xs lg:max-w-sm">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-md lg:max-w-lg">
                 <video
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto max-h-96 rounded-2xl object-cover"
                   controls
                   autoPlay
                   muted
