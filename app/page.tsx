@@ -52,7 +52,7 @@ export default function TrendlygrowwPage() {
             <div className="flex justify-center lg:justify-end lg:items-center">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-md lg:max-w-lg">
                 <video
-                  className="w-full h-auto max-h-96 rounded-2xl object-cover"
+                  className="w-full h-auto max-h-[720px] rounded-2xl object-cover"
                   controls
                   autoPlay
                   muted
