@@ -337,7 +337,7 @@ export default function PricingPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">BASIC BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹1</span>
+                  <span className="text-4xl font-bold text-gray-900">₹99</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
@@ -363,7 +363,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handleBuyNowClick('Basic', 1)}
+                  onClick={() => handleBuyNowClick('Basic', 99)}
                   disabled={loading !== null}
                 >
                   {loading === 'Basic' ? 'Processing...' : 'Buy Now'}
@@ -379,7 +379,7 @@ export default function PricingPage() {
               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl">ADVANCED BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹1</span>
+                  <span className="text-4xl font-bold text-gray-900">₹149</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
@@ -407,7 +407,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold btn-glow"
-                  onClick={() => handleBuyNowClick('Advanced', 1)}
+                  onClick={() => handleBuyNowClick('Advanced', 149)}
                   disabled={loading !== null}
                 >
                   {loading === 'Advanced' ? 'Processing...' : 'Buy Now'}
@@ -423,7 +423,7 @@ export default function PricingPage() {
               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl">PREMIUM BUNDLE</CardTitle>
                 <CardDescription className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">₹1</span>
+                  <span className="text-4xl font-bold text-gray-900">₹199</span>
                   <span className="text-gray-600"> Lifetime</span>
                 </CardDescription>
               </CardHeader>
@@ -457,7 +457,7 @@ export default function PricingPage() {
               <CardFooter className="mt-auto">
                 <Button
                   className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold btn-glow shadow-lg"
-                  onClick={() => handleBuyNowClick('Premium', 1)}
+                  onClick={() => handleBuyNowClick('Premium', 199)}
                   disabled={loading !== null}
                 >
                   {loading === 'Premium' ? 'Processing...' : 'Buy Now'}

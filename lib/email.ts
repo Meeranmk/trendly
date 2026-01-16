@@ -9,9 +9,9 @@ const PACKAGE_LINKS: Record<string, string> = {
 
 // Package prices
 const PACKAGE_PRICES: Record<string, number> = {
-  'Basic': 1,
-  'Advanced': 1,
-  'Premium': 1,
+  'Basic': 99,
+  'Advanced': 149,
+  'Premium': 199,
 }
 
 // Create reusable transporter
