@@ -2,57 +2,57 @@ import nodemailer from 'nodemailer'
 
 // Package to Google Drive link mapping
 const PACKAGE_LINKS: Record<string, string> = {
-    'Basic': 'https://drive.google.com/drive/folders/1wh9e3fMQ20utXrPcVP8en7av93WPhRGq?usp=drive_link',
-    'Advanced': 'https://drive.google.com/drive/folders/19NjqV2S7D6Q_OdsMuCtyUxjYNddNKS-0?usp=drive_link',
-    'Premium': 'https://drive.google.com/drive/folders/1hHTpIYABvCyd3jI_4TcE7VYOHMQqmjea?usp=drive_link',
+  'Basic': 'https://drive.google.com/drive/folders/1wh9e3fMQ20utXrPcVP8en7av93WPhRGq?usp=drive_link',
+  'Advanced': 'https://drive.google.com/drive/folders/19NjqV2S7D6Q_OdsMuCtyUxjYNddNKS-0?usp=drive_link',
+  'Premium': 'https://drive.google.com/drive/folders/1hHTpIYABvCyd3jI_4TcE7VYOHMQqmjea?usp=drive_link',
 }
 
 // Package prices
 const PACKAGE_PRICES: Record<string, number> = {
-    'Basic': 99,
-    'Advanced': 149,
-    'Premium': 199,
+  'Basic': 1,
+  'Advanced': 1,
+  'Premium': 1,
 }
 
 // Create reusable transporter
 const createTransporter = () => {
-    return nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: parseInt(process.env.SMTP_PORT || '587'),
-        secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASSWORD,
-        },
-    })
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  })
 }
 
 interface SendPackageEmailParams {
-    customerEmail: string
-    customerName?: string
-    packageName: string
-    orderId: string
-    paymentId: string
+  customerEmail: string
+  customerName?: string
+  packageName: string
+  orderId: string
+  paymentId: string
 }
 
 export async function sendPackageEmail({
-    customerEmail,
-    customerName = 'Customer',
-    packageName,
-    orderId,
-    paymentId,
+  customerEmail,
+  customerName = 'Customer',
+  packageName,
+  orderId,
+  paymentId,
 }: SendPackageEmailParams) {
-    try {
-        const transporter = createTransporter()
-        const driveLink = PACKAGE_LINKS[packageName]
-        const packagePrice = PACKAGE_PRICES[packageName]
+  try {
+    const transporter = createTransporter()
+    const driveLink = PACKAGE_LINKS[packageName]
+    const packagePrice = PACKAGE_PRICES[packageName]
 
-        if (!driveLink) {
-            throw new Error(`Invalid package name: ${packageName}`)
-        }
+    if (!driveLink) {
+      throw new Error(`Invalid package name: ${packageName}`)
+    }
 
-        // Email HTML template
-        const htmlContent = `
+    // Email HTML template
+    const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,8 +140,8 @@ export async function sendPackageEmail({
 </html>
     `
 
-        // Plain text version
-        const textContent = `
+    // Plain text version
+    const textContent = `
 Hi ${customerName},
 
 Thank you for purchasing the ${packageName} Package (₹${packagePrice}) from Trendlygroww!
@@ -171,19 +171,19 @@ Trendlygroww Team
 © 2026 Trendlygroww. All rights reserved.
     `
 
-        // Send email
-        const info = await transporter.sendMail({
-            from: `"Trendlygroww" <${process.env.SMTP_FROM_EMAIL}>`,
-            to: customerEmail,
-            subject: `🎉 Your ${packageName} Package is Ready - Trendlygroww`,
-            text: textContent,
-            html: htmlContent,
-        })
+    // Send email
+    const info = await transporter.sendMail({
+      from: `"Trendlygroww" <${process.env.SMTP_FROM_EMAIL}>`,
+      to: customerEmail,
+      subject: `🎉 Your ${packageName} Package is Ready - Trendlygroww`,
+      text: textContent,
+      html: htmlContent,
+    })
 
-        console.log('Email sent successfully:', info.messageId)
-        return { success: true, messageId: info.messageId }
-    } catch (error) {
-        console.error('Error sending email:', error)
-        throw error
-    }
+    console.log('Email sent successfully:', info.messageId)
+    return { success: true, messageId: info.messageId }
+  } catch (error) {
+    console.error('Error sending email:', error)
+    throw error
+  }
 }
